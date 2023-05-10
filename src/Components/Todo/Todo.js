@@ -1,11 +1,16 @@
 import React, { useState } from 'react'
 import AddingTest from '../Adding Task/AddingTest'
+import TaskList from '../TaskList/TaskList';
 
 export default function Todo() {
 
   const [todo,setToDo] = useState([]);
 
   return (
-    <div><AddingTest todo = {todo} setToDo={setToDo}/></div>
+    <div>
+      <AddingTest todo = {todo} setToDo={setToDo}/>
+      <TaskList todo = {todo}/>
+      </div>
+    
   )
 }

@@ -1,8 +1,8 @@
 import './App.css';
 import Heading from './Components/Heading/Heading'
-import ToDo from './Components/Todo/Todo'
+import ToDoPage from './Page/ToDoPage'
 import { Route, Routes } from 'react-router-dom';
-import ToDoList from './Page/ToDoList';
+
 
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
     <div className="App">
       <Heading/>
       <Routes>
-        <Route path = '/' element = {<ToDoList/>}></Route>
+        <Route path = '/' element = {<ToDoPage/>}></Route>
       </Routes>
     </div>
   );

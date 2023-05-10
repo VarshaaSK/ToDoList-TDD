@@ -41,9 +41,10 @@ describe("Should check the Button", () => {
         render(<AddingTest todo = {[]} setToDo={mockSetToDo}/>)
         const inputField = screen.getByPlaceholderText("Enter your Task!");
         fireEvent.click(inputField);
-        fireEvent.click(inputField, {target : {value : "Task One"}});
+        fireEvent.change(inputField, {target : {value : "Task One"}});
         const buttonElement = screen.getByRole("button" , {name : "Add Task"});
-        fireEvent.click(buttonElement);
+        fireEvent.click(buttonElement)
         expect(inputField.value).toBe("");
     })
 })
+
