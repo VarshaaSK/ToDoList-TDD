@@ -1,7 +1,10 @@
 import React from 'react'
+import Todo from '../Components/Todo/Todo'
 
 export default function ToDoList() {
   return (
-    <div>ToDoList</div>
+    <div>
+      <Todo/>
+    </div>
   )
 }
