@@ -10,6 +10,7 @@ export default function Todo() {
     <div>
       <AddingTest todo = {todo} setToDo={setToDo}/>
       <TaskList todo = {todo}/>
+      <Link to = "/user">Go To Users</Link>
       </div>
     
   )

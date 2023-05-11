@@ -1,5 +1,13 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import Todo from '../Todo';
+import { BrowserRouter } from 'react-router-dom';
+
+const MockToDo = () => {
+    return 
+    <BrowserRouter>
+        <Todo/>
+    </BrowserRouter>
+}
 
 const addTask = (tasks) => {
     const inputElement = screen.getByPlaceholderText("Enter your Task!");

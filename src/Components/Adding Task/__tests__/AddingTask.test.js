@@ -31,7 +31,7 @@ describe("Should check the Button", () => {
         render(<AddingTest todo={[]} setToDo={mockSetToDo}/>)
         const inputField = screen.getByPlaceholderText("Enter your Task!");
         fireEvent.click(inputField);
-        fireEvent.click(inputField, {target : {value : "Task One"}});
+        fireEvent.change(inputField, {target : {value : "Task One"}});
         const buttonElement = screen.getByRole("button" , {name : "Add Task"});
         fireEvent.click(buttonElement);
         expect(mockSetToDo).toBeCalled()
@@ -45,6 +45,15 @@ describe("Should check the Button", () => {
         const buttonElement = screen.getByRole("button" , {name : "Add Task"});
         fireEvent.click(buttonElement)
         expect(inputField.value).toBe("");
+    })
+
+    test("Should diasble the button when input field does not have any value", () => {
+        render(<AddingTest todo = {[]} setToDo={mockSetToDo}/>)
+        const inputField = screen.getByPlaceholderText("Enter your Task!");
+        fireEvent.click(inputField);
+        const buttonElement = screen.getByRole("button", {name : "Add Task"});
+        // fireEvent.click(buttonElement);
+        expect(buttonElement).toBeDisabled();
     })
 })
 
