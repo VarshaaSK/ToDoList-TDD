@@ -14,7 +14,7 @@ describe("Should check the Input Field", () => {
         render(<AddingTest todo = {[]} setToDo = {mockSetToDo}/>);
         const inputFiled = screen.getByPlaceholderText("Enter your Task!");
         fireEvent.click(inputFiled);
-        fireEvent.click(inputFiled, {target : {value : "Task One"}});
+        fireEvent.change(inputFiled, {target : {value : "Task One"}});
         expect(inputFiled.value).toBe("Task One");
     })
 })

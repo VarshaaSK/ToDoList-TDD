@@ -5,25 +5,25 @@ export default function User() {
     const [users, setUsers] = useState([]);
 
     const fetchUsers = async () => {
-        const data = await axios.get("https://randomuser.me/api?results=5");
-        console.log(data);
+        await axios.get("https://randomuser.me/api?results=5")
+        .then((response)=>{
+            const {results} = response.data;
+            setUsers(results);
+        });
+        
     }
 
     useEffect(() => {
         fetchUsers();
-    }, []);
+    },[]);
 
   return (
-    <div>
+    <>
         {
-            users.map((item,index) => {
-                return (
-                    <div key = {index} data-testid = "user-id">
-                        <h2>{item.name}</h2>
-                    </div>
-                )
-            })
-        }
-    </div>
+            users.map((each,index)=>(
+                <div data-testid="user-id" key={index}>{each.name.first}</div>
+            ))
+        }        
+    </>
   )
 }

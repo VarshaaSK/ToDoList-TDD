@@ -2,7 +2,7 @@ const mockData = {
     data : {
         results : [
             {
-                name : Sample
+                name : 'Sample'
             }
         ]
     }
